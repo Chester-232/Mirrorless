@@ -14,7 +14,10 @@ import (
 )
 
 func Run() {
-	conn, err := net.Dial("tcp", ":8080");
+	var IP string;
+	fmt.Print("Enter the server IP: ")
+	fmt.Scan(&IP);
+	conn, err := net.Dial("tcp", IP+ ":8080");
 	utils.Checker("Error connecting to the server: ", err);
 	defer conn.Close()
 
